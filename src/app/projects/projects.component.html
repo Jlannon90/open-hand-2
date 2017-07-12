@@ -1,0 +1,9 @@
+<h2>
+  Here is a list of current funding projects:
+</h2>
+
+<div *ngFor="let project of projects" (click)="goToDetailPage(project)" class="panel panel-default">
+  <div class="panel-body">
+    <h3><em>{{project.title}}</em> for {{project.person}}</h3>
+  </div>
+</div>
