@@ -1,1 +1,38 @@
-<h2>Add a Project!</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Add New Project</h3>
+  </div>
+  <div class="panel-body">
+    <div>
+      <label>Project Title:</label>
+      <br>
+      <input #newTitle>
+    </div>
+
+    <div>
+      <label>ProjectDescription:</label>
+      <br>
+      <textarea #newDescription></textarea>
+    </div>
+
+    <div>
+      <label>Project Person:</label>
+      <br>
+      <input #newPerson>
+    </div>
+
+    <div>
+      <label>Project Goal:</label>
+      <br>
+      <input #newGoal>
+    </div>
+
+    <div>
+      <label>Current Funds:</label>
+      <br>
+      <input #newCurrent>
+    </div>
+    <button (click)="submitForm(newTitle.value, newDescription.value, newPerson.value, newGoal.value, newCurrent.value); newTitle.value = ''; newDescription.value = ''; newPerson.value = ''; newGoal.value = ''; newCurrent.value = ''">Add</button>
+...
+  </div>
+</div>

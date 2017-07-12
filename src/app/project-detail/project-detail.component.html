@@ -1,1 +1,6 @@
-<h2>Project Details</h2>
+<div>
+  <h3>{{(projectToDisplay | async)?.title}}</h3>
+  <h4>{{(projectToDisplay | async)?.person}}</h4>
+  <p>{{(projectToDisplay | async)?.description}}</p>
+  <h4>${{(projectToDisplay | async)?.current}} / ${{(projectToDisplay | async)?.goal}}</h4>
+</div>

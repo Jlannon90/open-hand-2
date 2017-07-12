@@ -1,28 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../project.model';
 import { Router } from '@angular/router';
+import { ProjectService } from '../project.service';
+import { FirebaseListObservable } from 'angularfire2/database';
+
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.css']
+  styleUrls: ['./projects.component.css'],
+  providers: [ProjectService]
 })
 
 export class ProjectsComponent implements OnInit {
+  projects: FirebaseListObservable<any[]>;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private projectService: ProjectService) { }
 
   ngOnInit() {
+    this.projects = this.projectService.getProjects();
   }
 
-  projects: Project[] = [
-    new Project("Trip to France", "I really need to go to fashion week in Pari!💅", "Emily Huffington", 4500, 0, 1 ),
-    new Project("Upgrade my hog", "I need new parts for my hog, help a brother out.☠️", "Terry Bradshaw", 5000, 0, 2),
-    new Project ("VIP at Coachella", "Daddy only paid for general entry...", "Bernice Jones", 8000, 0, 3)
-  ];
-
-  goToDetailPage(clickedProject: Project) {
-    this.router.navigate(['projects', clickedProject.id]);
+  goToDetailPage(clickedProject) {
+    this.router.navigate(['projects', clickedProject.$key]);
   };
 
 }

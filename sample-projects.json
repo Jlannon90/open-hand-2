@@ -1,0 +1,23 @@
+{ "projects": [{
+    "title": "Trip to France",
+    "description": "I really need to go to fashion week in Pari! 💅",
+    "person": "Emily Huffington",
+    "goal": "4500",
+    "current": "0",
+    "id": "1"
+    }, {
+    "title": "Upgrade my hog",
+    "description": "I need new parts for my hog, help a brother out. ☠️",
+    "person": "Terry Bradshaw",
+    "goal": "5000",
+    "current": "0",
+    "id": "2"
+      }, {
+    "title": "VIP at Coachella",
+    "description": "Daddy only paid for general entry...",
+    "person": "Bernice Jones",
+    "goal": "8000",
+    "current": "0",
+    "id": "3"
+  }]
+}
