@@ -35,4 +35,17 @@ export class ProjectService {
     projectEntryInFirebase.remove();
   }
 
+  updateAmount(localAmountToUpdate, projectId){
+    var projectEntryInFirebase =
+    this.getProjectById(projectId);
+    var holder;
+    projectEntryInFirebase.subscribe((snapshot) => {
+      holder = snapshot;
+    });
+    holder.current = parseInt(holder.current);
+    holder.current += localAmountToUpdate;
+    projectEntryInFirebase.update(holder);
+  }
+
+
 }

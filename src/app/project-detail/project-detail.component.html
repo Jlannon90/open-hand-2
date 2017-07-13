@@ -3,4 +3,9 @@
   <h4>{{(projectToDisplay | async)?.person}}</h4>
   <p>{{(projectToDisplay | async)?.description}}</p>
   <h4>${{(projectToDisplay | async)?.current}} / ${{(projectToDisplay | async)?.goal}}</h4>
+
+  <form #donateForm="ngForm" (ngSubmit)="submitForm(donateForm)">
+  <input type="number" name="amount" ngModel>
+  <button type="submit">Donate</button>
+</form>
 </div>

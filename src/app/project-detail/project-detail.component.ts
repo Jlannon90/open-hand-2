@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { Project } from '../project.model';
 import { ProjectService } from '../project.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-project-detail',
@@ -23,4 +24,7 @@ export class ProjectDetailComponent implements OnInit {
     this.projectToDisplay = this.projectService.getProjectById(this.projectId);
   }
 
+  submitForm(form: NgForm) {
+    this.projectService.updateAmount(parseInt(form.value.amount), this.projectId);
+  }
 }
