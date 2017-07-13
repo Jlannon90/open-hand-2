@@ -14,6 +14,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 
 export class ProjectsComponent implements OnInit {
   projects: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
 
   constructor(private router: Router, private projectService: ProjectService) { }
 
@@ -23,6 +24,12 @@ export class ProjectsComponent implements OnInit {
 
   goToDetailPage(clickedProject) {
     this.router.navigate(['projects', clickedProject.$key]);
-  };
+  }
+
+  onChange(optionFromMenu) {
+    this.currentTotal = optionFromMenu;
+  }
+
+  currentTotal: string = "allAmounts";
 
 }

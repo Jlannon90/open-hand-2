@@ -12,7 +12,9 @@ import { AboutComponent } from './about/about.component';
 import { routing } from './app.routing'; // add manually
 import { masterFirebaseConfig } from './api-keys'; //add manually
 import { AngularFireModule } from 'angularfire2'; //add manually
-import { AngularFireDatabaseModule } from 'angularfire2/database'; //add manually
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { EditProjectComponent } from './edit-project/edit-project.component';
+import { SortAmountPipe } from './sort-amount.pipe'; //add manually
 
 
 export const firebaseConfig = {
@@ -29,7 +31,9 @@ export const firebaseConfig = {
     ProjectsComponent,
     AdminComponent,
     ProjectDetailComponent,
-    AboutComponent
+    AboutComponent,
+    EditProjectComponent,
+    SortAmountPipe
   ],
   imports: [
     BrowserModule,
